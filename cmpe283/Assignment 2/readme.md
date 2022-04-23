@@ -2,8 +2,8 @@ Open cpuid file in /linux/arch/x86/kvm folder.
 Add code for the below functionalities
 
 1. For CPUID leaf node %eax=0x4FFFFFFF:
-   Return the total number of exits (all types) in %eax
-2. For CPUID leaf node %eax=0x4FFFFFFE:
+Return the total number of exits (all types) in %eax
+3. For CPUID leaf node %eax=0x4FFFFFFE:
    Return the high 32 bits of the total time spent processing all exits in %ebx
    Return the low 32 bits of the total time spent processing all exits in %ecx
    Open vmx.c file in /linux/arch/x86/kvm/vmx folder.
