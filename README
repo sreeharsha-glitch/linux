@@ -1,18 +1,48 @@
-Linux kernel
+Read me
 ============
 
-There are several guides for kernel developers and users. These guides can
-be rendered in a number of formats, like HTML and PDF. Please read
-Documentation/admin-guide/README.rst first.
+CMPE 283 ASSIGNMENT -1
+1. I did the assignment on my own work.
 
-In order to build the documentation, use ``make htmldocs`` or
-``make pdfdocs``.  The formatted documentation can also be read online at:
-
-    https://www.kernel.org/doc/html/latest/
-
-There are various text files in the Documentation/ subdirectory,
-several of them using the Restructured Text markup notation.
-
-Please read the Documentation/process/changes.rst file, as it contains the
-requirements for building and running the kernel, and information about
-the problems which may result by upgrading your kernel.
+2. Follow these steps to do the assignment.
+    1. Create a nested virtualization enabled VM instance in GCP using the below command
+        gcloud compute instances create 'Instance name'\
+        --enable-nested-virtualization \
+        --zone='Zone' \
+        --min-cpu-platform="Intel Haswell"
+        Here change the Instance name, Zone accordingly
+    
+    2. Check is nested virtualization is enable using the command grep -cw vmx /proc/cpuinfo. 
+        If the response is non-zero, the nested virtualization is enabled.
+    3. SSH into the instance and run the following commands
+        sudo apt update
+        sudo apt upgrade
+        sudo apt install git
+    4. Login to your github account and fork the main Linux repository.
+    5. Create ssh keypair in your VM instance using the command ssh-keygen
+    6. Copy the public key. 
+    7. Open the forked linux repository in your github account.
+    8. Go to settings.
+    9. Click on Add Deploy keys.
+    10. Add your instance's public key and check the write access checkbox.
+    11. Now clone your branch of linux repository to the instance.
+    12. Inside the VM, change the folder to linux using 'cd linux' command.
+    13. Create a new folder 'cmpe283' using 'mkdir cmpe283' command.
+    14. Change the folder to linux using 'cd cmpe283' command.
+    15. Copy the Makefile and cmpe283-1.c files from canvas to this folder.
+    16. Run the `make' command. It will give an error. So run the following commands one after another.
+        sudo apt-get install build-essential
+        sudo apt install libncurses5-dev
+        sudo apt install flex
+        sudo apt install bison -y
+        cp /boot/config-4.19.0-20-cloud-amd64 .config
+        sudo apt install libssl-dev
+        sudo apt install bc
+        sudo apt install libelf-dev
+        sudo apt install linux-headers-$(uname -r)
+     17. Run the command: 'make -j 1 modules'. This command will take about an hour.
+     18. Run the command: 'make -j 1'
+     19. Open the .config file and change the signature certificates as given in this link: https://stackoverflow.com/questions/67670169/compiling-kernel-gives-error-no-rule-to-make-target-debian-certs-debian-uefi-ce
+     20. Now run 'make' command.
+     21. Call 'sudo insmod ./cmpe283-1.ko'
+     22. Run 'sudo dmesg' to see the capabilities.
