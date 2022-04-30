@@ -33,9 +33,12 @@ Steps:
 <img width="370" alt="166089658-052172d3-8649-4a8e-bd94-c9fdc045602b" src="https://user-images.githubusercontent.com/71619460/166092041-4bf658a2-6682-4b9f-aa5e-beec6ff24c99.png">
 12. Cpuid - I 0X4fffffffd -444 - output for invalid exit code
 <img width="440" alt="166089665-f7830bec-f0f1-4357-b4c0-576df3940690" src="https://user-images.githubusercontent.com/71619460/166092062-878ce032-67a4-4d3d-ba84-e5a2551f062a.png">
+
 14. Comment of the frequency of exits Answer: Frequency of the exits depends on the system use.The number of exit increases as more priveleged operations are performed.
-![166089756-3ce2d277-244a-443d-ae8c-cf6cf27da0dc](https://user-images.githubusercontent.com/71619460/166092100-667a18fe-5593-47d3-b991-7c8558c55ab2.png)
-15. Of the exit types defined in the SDM, which are the most frequent? Least? Most frequent exit - MSR_WRITE(count -605825) Least frequent exit - DR_ACCESS(count-8)
+![166089756-3ce2d277-244a-443d-ae8c-cf6cf27da0dc](https://user-images.githubusercontent.com/71619460/166092215-8828b322-ba06-4048-95ae-3677ccbfa717.png)
+
+16. Of the exit types defined in the SDM, which are the most frequent? Least? Most frequent exit - MSR_WRITE(count -605825) Least frequent exit - DR_ACCESS(count-8)
+
 ![166089772-71989864-dec4-40c1-82d2-a8045772e415](https://user-images.githubusercontent.com/71619460/166092142-1dc3f359-e775-4c41-a5d1-eebba8c59fea.png)
 
 
